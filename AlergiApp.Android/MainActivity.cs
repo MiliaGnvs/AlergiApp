@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Color = Android.Graphics.Color;
 
 namespace AlergiApp.Droid
 {
@@ -18,6 +19,8 @@ namespace AlergiApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            Window.SetNavigationBarColor(Color.Argb(255,207,116,121));
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

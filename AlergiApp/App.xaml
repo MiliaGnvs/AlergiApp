@@ -6,6 +6,9 @@
              mc:Ignorable="d"
              x:Class="AlergiApp.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">White</Color>
+            <Color x:Key="SecondaryColor">#cf7479</Color>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

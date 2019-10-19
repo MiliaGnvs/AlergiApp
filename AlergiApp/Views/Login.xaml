@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PrimaryColor}"
+             x:Class="AlergiApp.Views.Login">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="Label_FontAwesome" >
+                <Setter Property="FontFamily">
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"/>
+                </Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="15,0,0,0"/>
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}"/>
+                <Setter Property="FontSize" Value="Title"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.75*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" 
+                       Grid.Column="1" 
+                       Grid.ColumnSpan="3"
+                       Source="https://icon-library.net/images/grape-icon/grape-icon-16.jpg" 
+                       Aspect="AspectFit" 
+                       HorizontalOptions="FillAndExpand" 
+                       VerticalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Vertical" 
+                         VerticalOptions="Fill" 
+                         Grid.Row="1" 
+                         Grid.Column="0" 
+                             Spacing="5"
+                         Grid.ColumnSpan="5">
+                    <ScrollView>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,50,0,10">
+                                <Label Text="&#xf0e0;" Style="{DynamicResource Label_FontAwesome}" />
+                                <Entry Placeholder="Email" 
+                                        HorizontalOptions="FillAndExpand" 
+                                        Margin="15,0,25,0" 
+                                        TextColor="{DynamicResource SecondaryColor}"
+                                        PlaceholderColor="Gray"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="&#xf084;" Style="{DynamicResource Label_FontAwesome}" />
+                                <Entry Placeholder="Senha" 
+                                   HorizontalOptions="FillAndExpand" 
+                                   Margin="15,0,25,0" 
+                                   TextColor="{DynamicResource SecondaryColor}"
+                                   PlaceholderColor="Gray" />
+                            </StackLayout>
+                            <StackLayout Spacing="15" Margin="0,20,0,0">
+                                <Button Text="   Entrar   "
+                                    TextColor="{DynamicResource SecondaryColor}" 
+                                    BackgroundColor="{DynamicResource PrimaryColor}"
+                                    BorderColor="{DynamicResource SecondaryColor}"
+                                    BorderWidth="2"
+                                    CornerRadius="4"
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                                    HorizontalOptions="Center" />
+                                <Label Text="Esqueceu sua senha?" 
+                                   HorizontalOptions="CenterAndExpand" 
+                                   FontSize="Medium" 
+                           
+                                   TextColor="{DynamicResource SecondaryColor}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" 
+                                                          Tapped="Esqueci_Senha_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Button Text="   Criar conta   " 
+                                        TextColor="{DynamicResource SecondaryColor}" 
+                                        BackgroundColor="{DynamicResource PrimaryColor}"
+                                        BorderColor="{DynamicResource SecondaryColor}"
+                                        BorderWidth="2"
+                                        CornerRadius="4"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        VerticalOptions="End"
+                                        HorizontalOptions="Center" 
+                                        Margin="0,15,0,0"/>
+                            </StackLayout>
+                            <BoxView BackgroundColor="{DynamicResource PrimaryColor}"
+                                     HorizontalOptions="FillAndExpand"
+                                     HeightRequest="15"/>
+                    </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    
+</ContentPage>
