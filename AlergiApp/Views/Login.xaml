@@ -6,22 +6,11 @@
              mc:Ignorable="d"
              BackgroundColor="{DynamicResource PrimaryColor}"
              x:Class="AlergiApp.Views.Login">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Label" x:Key="Label_FontAwesome" >
-                <Setter Property="FontFamily">
-                    <OnPlatform x:TypeArguments="x:String" 
-                                Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"/>
-                </Setter>
-                <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="Margin" Value="15,0,0,0"/>
-                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}"/>
-                <Setter Property="FontSize" Value="Title"/>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
-        <StackLayout>
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>False</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+
+    <StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.25*"/>
@@ -43,53 +32,56 @@
                        HorizontalOptions="FillAndExpand" 
                        VerticalOptions="FillAndExpand"/>
                 <StackLayout Orientation="Vertical" 
-                         VerticalOptions="Fill" 
-                         Grid.Row="1" 
-                         Grid.Column="0" 
+                             Grid.Column="0" 
+                             Grid.Row="1" 
                              Spacing="5"
-                         Grid.ColumnSpan="5">
+                             VerticalOptions="Fill" 
+                             Grid.ColumnSpan="5">
                     <ScrollView>
                         <StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,50,0,10">
                                 <Label Text="&#xf0e0;" Style="{DynamicResource Label_FontAwesome}" />
                                 <Entry Placeholder="Email" 
-                                        HorizontalOptions="FillAndExpand" 
-                                        Margin="15,0,25,0" 
-                                        TextColor="{DynamicResource SecondaryColor}"
-                                        PlaceholderColor="Gray"/>
+                                       x:Name="ent_Email"
+                                       HorizontalOptions="FillAndExpand" 
+                                       Margin="15,0,25,0" 
+                                       TextColor="{DynamicResource SecondaryColor}"
+                                       PlaceholderColor="Gray"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="&#xf084;" Style="{DynamicResource Label_FontAwesome}" />
+                                <Label Text="&#xf084;" 
+                                       Style="{DynamicResource Label_FontAwesome}" />
                                 <Entry Placeholder="Senha" 
-                                   HorizontalOptions="FillAndExpand" 
-                                   Margin="15,0,25,0" 
-                                   TextColor="{DynamicResource SecondaryColor}"
-                                   PlaceholderColor="Gray" />
+                                       x:Name="ent_Senha"
+                                       HorizontalOptions="FillAndExpand" 
+                                       Margin="15,0,25,0" 
+                                       TextColor="{DynamicResource SecondaryColor}"
+                                       PlaceholderColor="Gray" />
                             </StackLayout>
                             <StackLayout Spacing="15" Margin="0,20,0,0">
                                 <Button Text="   Entrar   "
-                                    TextColor="{DynamicResource SecondaryColor}" 
-                                    BackgroundColor="{DynamicResource PrimaryColor}"
-                                    BorderColor="{DynamicResource SecondaryColor}"
-                                    BorderWidth="2"
-                                    CornerRadius="4"
-                                    FontAttributes="Bold"
-                                    FontSize="Medium"
-                                    HorizontalOptions="Center" />
+                                        TextColor="{DynamicResource SecondaryColor}" 
+                                        BackgroundColor="{DynamicResource PrimaryColor}"
+                                        BorderColor="{DynamicResource SecondaryColor}"
+                                        BorderWidth="2"
+                                        CornerRadius="4"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Center"/>
                                 <Label Text="Esqueceu sua senha?" 
-                                   HorizontalOptions="CenterAndExpand" 
-                                   FontSize="Medium" 
-                           
-                                   TextColor="{DynamicResource SecondaryColor}">
+                                       HorizontalOptions="CenterAndExpand" 
+                                       FontSize="Medium" 
+                                       TextColor="{DynamicResource SecondaryColor}">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer NumberOfTapsRequired="1" 
-                                                          Tapped="Esqueci_Senha_Tapped"/>
+                                                              Tapped="Esqueci_Senha_Tapped"/>
                                     </Label.GestureRecognizers>
                                 </Label>
                                 <Button Text="   Criar conta   " 
                                         TextColor="{DynamicResource SecondaryColor}" 
                                         BackgroundColor="{DynamicResource PrimaryColor}"
                                         BorderColor="{DynamicResource SecondaryColor}"
+                                        Clicked="Cadastrar_Clicked"
                                         BorderWidth="2"
                                         CornerRadius="4"
                                         FontAttributes="Bold"

@@ -11,7 +11,7 @@ namespace AlergiApp
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new Views.Login();
+            MainPage = new NavigationPage(new Views.Login());
         }
 
         protected override void OnStart()

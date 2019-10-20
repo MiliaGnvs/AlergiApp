@@ -9,6 +9,16 @@
         <ResourceDictionary>
             <Color x:Key="PrimaryColor">White</Color>
             <Color x:Key="SecondaryColor">#cf7479</Color>
+            <Style TargetType="Label" x:Key="Label_FontAwesome" >
+                <Setter Property="FontFamily">
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"/>
+                </Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="15,0,0,0"/>
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}"/>
+                <Setter Property="FontSize" Value="Title"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
