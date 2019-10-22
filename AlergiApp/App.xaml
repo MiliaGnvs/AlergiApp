@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AlergiApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">White</Color>
+            <Color x:Key="SecondaryColor">#cf7479</Color>
+            <Style TargetType="Label" x:Key="Label_FontAwesome" >
+                <Setter Property="FontFamily">
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"/>
+                </Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="15,0,0,0"/>
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}"/>
+                <Setter Property="FontSize" Value="Title"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
